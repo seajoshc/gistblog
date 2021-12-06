@@ -1,0 +1,31 @@
+name: Gistblog
+on:
+  push:
+    branches:
+      - main
+jobs:
+  gistblog:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: dorny/paths-filter@v2
+        id: blog
+        with:
+          list-files: shell
+          filters: |
+            create_blog:
+            - added: 'blog/*.md'
+            update_blog:
+            - modified: 'blog/*.md'
+      - if: steps.blog.outputs.create_blog == 'true'
+        uses: seajoshc/gistblog-action@v1
+        with:
+          gists-token: ${{ secrets.GISTS_TOKEN }}
+          operation: create
+          blog-files: "${{ steps.blog.outputs.create_blog_files }}"
+      - if: steps.blog.outputs.update_blog == 'true'
+        uses: seajoshc/gistblog-action@v1
+        with:
+          gists-token: ${{ secrets.GISTS_TOKEN }}
+          operation: update
+          blog-files: "${{ steps.blog.outputs.update_blog_files }}"
