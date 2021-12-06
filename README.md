@@ -1,4 +1,4 @@
-# Gistblog - Blog your little &lt;3 out using GitHub Gists.
+# Gistblog - Blog your little ❤️ out using GitHub Gists.
 
 Do you need a simple platform for sharing your thoughts and ideas with the internet? Have you ever wanted an easy way to turn some plaintext into a blog post? Don't care about things like SEO, monetization, or having a fancy looking website? Is "indefinitely free" your desired monthly cost of hosting your own blog? Gistblog is the blogging engine for you!
 
