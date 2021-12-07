@@ -9,8 +9,8 @@ Do you need a simple platform for sharing your thoughts and ideas with the inter
 # Setup
 
 1. You may fork this repo, create a new repo, or use an existing repo. If you didn't fork this repo, create two directories in the root of your repo: a `blog/` directory and a GitHub Actions workflow directory `.github/workflows/` if it doesn't already exist.
-1. Create a new [GitHub Personal Access Token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) with the `gist` scope.
-1. Create a [secret within the repo you're using](https://docs.github.com/en/actions/security-guides/encrypted-secrets) named GISTS_TOKEN and store the value of the personal access token you just created.
+1. Create a new [GitHub Personal Access Token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) with the `gist` scope (name can be anything you want, like "Gistblog").
+1. Create a [repository secret](https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-a-repository) named GISTS_TOKEN and store the value of the personal access token you just created.
 1. If you forked this repo, you will need to enable the provided workflow by going into the "Actions" menu within your fork and accept the warning about running the workflow. If you didn't fork this repo, create `.github/workflows/gistblog.yaml` with the following GitHub Actions workflow. Be sure to change your branch name below if it isn't `main`:
 
 ```yaml
